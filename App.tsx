@@ -7,6 +7,7 @@ import {
   Alert,
   TouchableOpacity,
   Pressable,
+  ScrollView,
 } from "react-native";
 
 export default function App() {
@@ -14,22 +15,57 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <TouchableOpacity onPress={onButtonPress}>
-          <Image
-            source={require("./assets/splash-icon.png")}
-            style={styles.image1}
-          />
-        </TouchableOpacity>
+        <ScrollView 
+        showsVerticalScrollIndicator={false}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={
+          {
+            backgroundColor:"red"
+          }
+        }
+        >
+          <TouchableOpacity onPress={onButtonPress}>
+            <Image
+              source={require("./assets/splash-icon.png")}
+              style={styles.image1}
+            />
+          </TouchableOpacity>
 
-        <Pressable onPress={onButtonPress}>
-          <Image
-            source={{ uri: "https://picsum.photos/200/300" }}
-            style={styles.image2}
-            blurRadius={2}
-          />
-        </Pressable>
+          <Pressable onPress={onButtonPress}>
+            <Image
+              source={{ uri: "https://picsum.photos/200/300" }}
+              style={styles.image2}
+              blurRadius={2}
+            />
+          </Pressable>
 
-        <Button title="Press on me" onPress={onButtonPress} />
+          <Pressable onPress={onButtonPress}>
+            <Image
+              source={{ uri: "https://picsum.photos/200/300" }}
+              style={styles.image2}
+              blurRadius={2}
+            />
+          </Pressable>
+
+          <Pressable onPress={onButtonPress}>
+            <Image
+              source={{ uri: "https://picsum.photos/200/300" }}
+              style={styles.image2}
+              blurRadius={2}
+            />
+          </Pressable>
+
+          <Pressable onPress={onButtonPress}>
+            <Image
+              source={{ uri: "https://picsum.photos/200/300" }}
+              style={styles.image2}
+              blurRadius={2}
+            />
+          </Pressable>
+
+          <Button title="Press on me" onPress={onButtonPress} />
+        </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
   );
