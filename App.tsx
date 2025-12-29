@@ -1,25 +1,18 @@
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import { View, Button, Text } from "react-native";
+import { View, Button, Text, Modal } from "react-native";
 import { useState } from "react";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function App() {
-  const [state, setState] = useState(20)
-  const IncreaseValue = () => setState(prevState => prevState + 1)
-  const DecreaseValue = () => setState(prevState => prevState - 1)
+  const [modalVisible, setModalVisible] = useState(false)
   return (
-    <View
-      style={{
-        backgroundColor: "white",
-        flex: 1,
-        flexDirection: "column", // if column main justify content will be vertical, else for row
-        justifyContent: "center", // for vertical
-        alignItems: "center" // for horizontal
-      }}>
-     <Button title="Increase" onPress={IncreaseValue}/>
-      <Text style = {{fontSize:40}}>
-        {state}
-      </Text>
-     <Button title="Decrease" onPress={DecreaseValue}/>
-    </View>
+    <SafeAreaView style={{backgroundColor:"gold", flex:1, justifyContent:"center"}}>
+      <Button title="Open the Modal" onPress={() => setModalVisible(true)}/>
+      <Modal visible={modalVisible} animationType="slide">
+        <Text style={{fontSize:50, marginTop:20}}>This is a Modal</Text>
+        <Button title="Close the Modal" onPress={() => setModalVisible(false)}/>
+          <AntDesign name="close-circle" size={42} color="red" onPress={() => setModalVisible(false)}/>
+      </Modal>
+    </SafeAreaView>
   );
 }
