@@ -35,13 +35,19 @@ const TomatoScreen = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View>
-            <Text>{item.name_of_author}</Text>
+            <Text
+              onPress={() => navigation.navigate("GoldScreen", { id: item.id })}
+            >
+              {item.name_of_author}
+            </Text>
             <Text>{item.price_of_book}</Text>
-            <Image source={{uri: item.cover}}
-            style={{
-              height:150,
-              width: 150,
-            }} ></Image>
+            <Image
+              source={{ uri: item.cover }}
+              style={{
+                height: 150,
+                width: 150,
+              }}
+            ></Image>
           </View>
         )}
       />
