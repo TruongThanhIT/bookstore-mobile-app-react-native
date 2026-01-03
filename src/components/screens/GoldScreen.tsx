@@ -11,7 +11,7 @@ const GoldScreen = () => {
     <View style={styles.container}>
       <Text style={styles.text}>Gold Screen</Text>
       <Button title="Go to Purple Screen" onPress={() => navigation.navigate("PurpleScreen")} />
-        <Text>Hello, {params.name}</Text>
+        <Text>Hello, {params?.name}</Text>
     </View>
   );
 };
