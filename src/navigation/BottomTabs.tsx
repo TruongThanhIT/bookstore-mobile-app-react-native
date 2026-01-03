@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import TomatoScreen from '../components/screens/TomatoScreen';
-import PurpleScreen from '../components/screens/PurpleScreen';
-import GoldScreen from '../components/screens/GoldScreen';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
+import TomatoScreen from '../screens/TomatoScreen';
+import PurpleScreen from '../screens/PurpleScreen';
+import GoldScreen from '../screens/GoldScreen';
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {

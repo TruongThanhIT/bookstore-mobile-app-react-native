@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import TomatoScreen from "../components/screens/TomatoScreen";
-import GoldScreen from "../components/screens/GoldScreen";
-import PurpleScreen from "../components/screens/PurpleScreen";
+import TomatoScreen from "../screens/TomatoScreen";
+import GoldScreen from "../screens/GoldScreen";
+import PurpleScreen from "../screens/PurpleScreen";
 
 const Stack = createStackNavigator()
 

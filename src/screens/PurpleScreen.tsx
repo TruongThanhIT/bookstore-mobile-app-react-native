@@ -10,6 +10,7 @@ const PurpleScreen = () => {
 };
 
 export default PurpleScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
