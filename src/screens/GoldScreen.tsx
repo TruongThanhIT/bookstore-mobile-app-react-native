@@ -9,12 +9,16 @@ const GoldScreen = () => {
   const { name, params } = useRoute();
   console.log(name);
   console.log(params);
+    const endpointURL = "https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books";
 
   const getBookByID = async () => {
-    const endpointURL = "https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books";
-    const response = await axios.get(`${endpointURL}/${params.id}`);
-    setAuthor(response.data?.name_of_author);
-    console.log("📦 API Response:", JSON.stringify(response.data, null));
+    try {
+      const response = await axios.get(`${endpointURL}/${params.id}`);
+      setAuthor(response.data?.name_of_author);
+      console.log("📦 API Response:", JSON.stringify(response.data, null));
+    } catch (error) {
+      console.log("An Error Occurred", error);
+    }
   };
   return (
     <View style={styles.container}>
