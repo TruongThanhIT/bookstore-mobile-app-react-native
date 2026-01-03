@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import React, { useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import axios from "axios";
@@ -9,7 +9,7 @@ const GoldScreen = () => {
   const { name, params } = useRoute();
   console.log(name);
   console.log(params);
-    const endpointURL = "https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books";
+  const endpointURL = "https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books";
 
   const getBookByID = async () => {
     try {
@@ -20,6 +20,15 @@ const GoldScreen = () => {
       console.log("An Error Occurred", error);
     }
   };
+
+  const deleteBookByID = async () => {
+    try {
+      const response = await axios.delete(`${endpointURL}/${params.id}`);
+      Alert.alert("Book Is Deleted Successfully");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Gold Screen</Text>
@@ -27,6 +36,7 @@ const GoldScreen = () => {
         title="Go to Purple Screen"
         onPress={() => navigation.navigate("PurpleScreen")}
       />
+      <Button title="Delete Book" onPress={deleteBookByID} />
       <Button title="Get author name" onPress={getBookByID} />
       <Text>Author: {author}</Text>
     </View>
