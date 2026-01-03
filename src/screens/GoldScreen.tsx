@@ -29,6 +29,31 @@ const GoldScreen = () => {
       console.log(error);
     }
   };
+
+  const body = {
+    name_of_author: "Thanh Truong",
+    cover:
+      "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1629260207i/58798298.jpg",
+    price_of_book: "30000",
+    email_of_seller: "thanhtruong@gmail.com",
+  };
+  const createBook = async () => {
+    try {
+      const response = await axios.post(endpointURL, body);
+      Alert.alert("Book has been created!");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateBook = async() => {
+    try {
+      const response = await axios.put(`${endpointURL}/${params.id}`, body);
+      Alert.alert("Book has been updated!");
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Gold Screen</Text>
@@ -36,7 +61,9 @@ const GoldScreen = () => {
         title="Go to Purple Screen"
         onPress={() => navigation.navigate("PurpleScreen")}
       />
+      <Button title="Create Book" onPress={createBook} />
       <Button title="Delete Book" onPress={deleteBookByID} />
+      <Button title="Update Book" onPress={updateBook} />
       <Button title="Get author name" onPress={getBookByID} />
       <Text>Author: {author}</Text>
     </View>
