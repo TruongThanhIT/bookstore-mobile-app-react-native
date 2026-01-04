@@ -6,17 +6,7 @@ import axios from "axios";
 const TomatoScreen = () => {
   const [bookList, setBookList] = useState([]);
   const navigation = useNavigation();
-  const endpointURL = "https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books";
-
-  const getListOfBooks = async () => {
-    try {
-      const response = await axios.get(endpointURL);
-      console.log(JSON.stringify(response.data, null, 3));
-      setBookList(response.data);
-    } catch (error) {
-      console.log("An Error Occurred: ", error);
-    }
-  };
+  
   console.log("====================bookList=============================");
   console.log(bookList);
   console.log("=================================================");
