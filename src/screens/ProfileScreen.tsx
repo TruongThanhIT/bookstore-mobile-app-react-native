@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const PurpleScreen = () => {
+const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>PurpleScreen Screen</Text>
+      <Text style={styles.text}>Hello world!</Text>
     </View>
   );
 };
 
-export default PurpleScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "purple",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
   },

@@ -2,8 +2,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 import TomatoScreen from '../screens/TomatoScreen';
-import PurpleScreen from '../screens/PurpleScreen';
-import GoldScreen from '../screens/GoldScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import SettingScreen from '../screens/SettingScreen';
+import HomeScreen from '../screens/HomeScreen';
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
@@ -21,9 +22,9 @@ export default function MyTabs() {
         },
       }}
     >
-      <Tab.Screen options={{title:"Tomato", tabBarIcon: ({color}) => <AntDesign name="home" size={24} color={color} />}} name="TomatoScreen" component={TomatoScreen} />
-      <Tab.Screen options={{title:"Purple", tabBarIcon: ({color}) => <AntDesign name="profile" size={24} color={color} />}} name="PurpleScreen" component={PurpleScreen} />
-       <Tab.Screen options={{title: "Gold", tabBarIcon: ({color}) => <Feather name="settings" size={24} color={color} />}} name="GoldScreen" component={GoldScreen} />
+      <Tab.Screen options={{title:"Home", tabBarIcon: ({color}) => <AntDesign name="home" size={24} color={color} />}} name="HomeScreen" component={HomeScreen} />
+      <Tab.Screen options={{title:"Profile", tabBarIcon: ({color}) => <AntDesign name="profile" size={24} color={color} />}} name="ProfileScreen" component={ProfileScreen} />
+       <Tab.Screen options={{title: "Setting", tabBarIcon: ({color}) => <Feather name="settings" size={24} color={color} />}} name="SettingScreen" component={SettingScreen} />
     </Tab.Navigator>
   );
 }

@@ -52,6 +52,7 @@ const AddBookScreen = ({ onCloseIconPress, onCreateSuccess, selectedItem }) => {
   return (
     <SafeAreaView>
       <AntDesign
+      style={styles.navIcon}
         name="close-circle"
         size={24}
         color="#E81D1D"
@@ -102,4 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
   },
+  navIcon: {
+    marginStart: 15
+  }
 });
