@@ -94,6 +94,7 @@ Each tab has custom icons from `@expo/vector-icons` (AntDesign and Feather).
 ### API Endpoint
 The app uses a mock API from MockAPI.io:
 ```
+Manage project DB: https://mockapi.io/projects/69586d4a6c3282d9f1d4ff8b
 Base URL: https://69586d4a6c3282d9f1d4ff8a.mockapi.io/books
 ```
 
